@@ -326,15 +326,39 @@ html {
     font-size: 0.80vw;
     padding-left: 2vw;
 }
+/* #social>h4:hover{
+  border-bottom: 1px solid white;
+
+} */
+
+
+h4::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+h4:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
 
 #social{
     display: flex;
 }
 
-#social h4{
-    padding: 0 1vw;
+h4{
+    margin: 0 1vw;
     text-transform: uppercase;
     font-size: 0.70vw;
     letter-spacing: 0.78px;
-
+    position: relative;
 }
